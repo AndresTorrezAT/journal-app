@@ -2,6 +2,13 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore/lite';
+import { getEnvironments } from '../helpers';
+
+// console.log( import.meta.env ); // frontend env
+// console.log(process.env); // backend env
+const env = getEnvironments();
+console.log(env);
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 

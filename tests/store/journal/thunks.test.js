@@ -27,6 +27,7 @@ describe('Pruebas en Journal thunks', () => {
             id: expect.any( String ),
             date: expect.any( Number ),
         }));
+        
         expect( dispatch ).toHaveBeenCalledWith( setActiveNote({
             body: '',
             title: '',
@@ -44,6 +45,6 @@ describe('Pruebas en Journal thunks', () => {
         docs.forEach( doc => deletePromises.push( deleteDoc( doc.ref ) ) ); // eliminamos el documento con su referencia
         await Promise.all( deletePromises );
 
-
     });
+
 });
