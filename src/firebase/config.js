@@ -6,8 +6,17 @@ import { getEnvironments } from '../helpers';
 
 // console.log( import.meta.env ); // frontend env
 // console.log(process.env); // backend env
-const env = getEnvironments();
-console.log(env);
+// const env = getEnvironments(); // las variables de entorno se obtienen de aca
+// console.log(env);
+
+const {
+  VITE_APIKEY,
+  VITE_AUTHDOMAIN,
+  VITE_PROJECTID,
+  VITE_STORAGEBUCKET,
+  VITE_MESSAGINGSENDERID,
+  VITE_APPID,
+} = getEnvironments();
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -25,13 +34,15 @@ console.log(env);
 
 // Testing
 const firebaseConfig = {
-  apiKey: "AIzaSyBGVyAC7ZXeEK-3J1tHCv-Woy037myKIl0",
-  authDomain: "react-cursos-test-dae6f.firebaseapp.com",
-  projectId: "react-cursos-test-dae6f",
-  storageBucket: "react-cursos-test-dae6f.appspot.com",
-  messagingSenderId: "182916219370",
-  appId: "1:182916219370:web:a6fb4a6da9fb1c43333293"
+  apiKey: VITE_APIKEY ,
+  authDomain: VITE_AUTHDOMAIN ,
+  projectId: VITE_PROJECTID ,
+  storageBucket: VITE_STORAGEBUCKET ,
+  messagingSenderId: VITE_MESSAGINGSENDERID ,
+  appId: VITE_APPID 
 };
+
+// console.log(firebaseConfig);
 
 // Initialize Firebase
 export const FirebaseApp = initializeApp( firebaseConfig );

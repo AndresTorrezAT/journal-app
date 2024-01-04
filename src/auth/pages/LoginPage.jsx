@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';// manda el url al router
 import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material';
 import { Google } from '@mui/icons-material';
 
@@ -19,7 +19,7 @@ export const LoginPage = () => {
   
   const { status, errorMessage } = useSelector( state => state.auth ); // busca el auth del store
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // se contacta con el store
   const { email, password, onInputChange} = useForm( formData );
 
   const isAuthenticating = useMemo( () => status === 'checking', [status]); // el bolean se actualiza cada vez que status cambia
@@ -94,6 +94,7 @@ export const LoginPage = () => {
                 disabled={isAuthenticating}
                 variant='contained' 
                 fullWidth
+                aria-label="google-btn"
                 onClick={ onGoogleSignIn }>
                 <Google/>
                 <Typography sx={{ ml:1 }}>Google</Typography>
