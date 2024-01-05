@@ -11,7 +11,7 @@ export const checkingAuthentication = ( email, password ) => {
 }
 
 export const startGoogleSignIn = () => {
-    return async( dispatch ) => {
+    return async( dispatch ) => { // el dispatch ejecuta todo lo que esta en este scope, con los argumentos (dispatch, getState) aunque no lo vea
 
         dispatch( checkingCredentials() );
 
@@ -42,7 +42,7 @@ export const startCreatingUserWithEmailPassword = ({ email, password, displayNam
 }
 
 export const startLoginWithEmailPassword = ({ email, password }) => {
-    return async( dispatch ) => {
+    return async( dispatch ) => { // mock de esto
 
         dispatch( checkingCredentials() );
 
